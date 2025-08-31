@@ -8,6 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: cachix/install-nix-action@v31
+      working-directory: ./stuff
       with:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
     - run: nix build
